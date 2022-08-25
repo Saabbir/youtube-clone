@@ -2,3 +2,13 @@
 @import "./02-base/base.scss";
 @import "./03-components/components.scss";
 @import "./04-utilities/utilities.scss";
+
+.l-videos-grid {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  grid-gap: 15px;
+}
+
+section.c-section-videos {
+  margin: 15px 0 0;
+}

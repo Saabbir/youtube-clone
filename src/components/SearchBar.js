@@ -2,13 +2,19 @@ import React from "react";
 
 class SearchBar extends React.Component {
   state = {
-    term: "",
+    searchTerm: "",
   };
 
   setSearchTerm = (e) => {
     this.setState({
-      term: e.target.value.toUpperCase(),
+      searchTerm: e.target.value,
     });
+  };
+
+  handleOnSubmit = (e) => {
+    e.preventDefault();
+
+    this.props.onTermSubmit(this.state.searchTerm);
   };
 
   render() {
@@ -17,13 +23,15 @@ class SearchBar extends React.Component {
         <div className="l-container">
           <div className="c-form c-search-bar__form">
             <label className="c-form__label">Search</label>
-            <input
-              className="c-form__control"
-              type="text"
-              placeholder="Nodejs tutorial"
-              value={this.state.term}
-              onChange={this.setSearchTerm}
-            />
+            <form onSubmit={this.handleOnSubmit}>
+              <input
+                className="c-form__control"
+                type="text"
+                placeholder="Nodejs tutorial"
+                value={this.state.searchTerm}
+                onChange={this.setSearchTerm}
+              />
+            </form>
           </div>
         </div>
       </div>
