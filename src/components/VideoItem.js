@@ -1,8 +1,8 @@
 import React from "react";
 
-const VideoItem = ({ video }) => {
+const VideoItem = ({ video, setCurrentVideo }) => {
   return (
-    <div className="c-video">
+    <div className="c-video" onClick={() => setCurrentVideo(video)}>
       <div className="c-video__img-container">
         <img
           className="c-video__thumbnail"
@@ -13,7 +13,7 @@ const VideoItem = ({ video }) => {
         />
       </div>
       <div className="c-video__copy">
-        <p>{video.snippet.description}</p>
+        <p>{video.snippet.title}</p>
       </div>
     </div>
   );

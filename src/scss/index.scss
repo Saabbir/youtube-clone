@@ -5,10 +5,24 @@
 
 .l-videos-grid {
   display: grid;
-  grid-template-columns: 500px 1fr;
+  grid-template-columns: 65% 1fr;
   grid-gap: 15px;
 }
 
 section.c-section-videos {
   margin: 15px 0 0;
+}
+
+// Learn more: https://css-tricks.com/almanac/properties/a/aspect-ratio/
+iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+
+  /* Non-importants */
+  display: block;
+  border: 0;
+  // box-shadow: 5px 5px 0px 0px #289fed, 10px 10px 0px 0px #5fb8ff,
+  //   15px 15px 0px 0px #a1d8ff, 20px 20px 0px 0px #cae6ff,
+  //   25px 25px 0px 0px #e1eeff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
